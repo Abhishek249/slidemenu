@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Left Slidebar Only Example</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Slidebars CSS -->
+		<link rel="stylesheet" href="slidebars.css">
+		
+		<!-- Example Styles -->
+		<link rel="stylesheet" href="example-styles.css">
+	</head>
+	
+	<body>	
+		<div id="sb-site">
+			<div class="sb-toggle-left"><img src="menu_icon.png"></div>
+			<h1>Left Slidebar Only Example</h1>
+			<p>This example only uses the left Slidebar. The usual control classes are here for testing purposes.</p>
+			<p>Prime Minister Narendra Modi arrived in Nepali capital Kathmandu on Tuesday for the 18th edition of the Saarc summit amid
+			speculation over whether he will hold talks with his Pakistani counterpart Nawaz Sharif after a chill in bilateral relations.
+			In a series of tweets before leaving, he emphasised the importance of "greater regional integration at all levels for socio-economic
+			development of South Asian region" and put forward his agenda.
+			"We hope that the Summit will lead to concrete outcomes, particularly in regard to various initiatives on enhancing connectivity," Modi posted on Twitter</p>
+			<p>Bengaluru: President Pranab Mukherjee will inaugurate the Commonwealth Science Conference,
+			which is being held in India for the first time on Tuesday evening. Duke of York Prince Andrew will be the
+			special guest at the inaugural session of the four-day conference at the country's premiere Indian Institute of Science (IISc).</p>
+			
+			
+		</div>
+		
+		<div class="sb-slidebar sb-left">
+			<!-- Your left Slidebar content. -->
+			<ul>
+				<li><a href="http://google.co.in">first tag</a></li>
+				<li><a href="http://facebook.com">2nd tag</a></li>
+			</ul>
+		</div>
+				
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<!-- Slidebars -->
+		<script src="slidebars.js"></script>
+		<script>
+			(function($) {
+				$(document).ready(function() {
+					$.slidebars();
+				});
+			}) (jQuery);
+		</script>
+	</body>
+</html>
