@@ -13,26 +13,29 @@
 	
 	<body>	
 		<div id="sb-site">
-			<div class="sb-toggle-left"><img src="menu_icon.png"></div>
-			<h1>Left Slidebar Only Example</h1>
-			<p>This example only uses the left Slidebar. The usual control classes are here for testing purposes.</p>
-			<p>Prime Minister Narendra Modi arrived in Nepali capital Kathmandu on Tuesday for the 18th edition of the Saarc summit amid
-			speculation over whether he will hold talks with his Pakistani counterpart Nawaz Sharif after a chill in bilateral relations.
-			In a series of tweets before leaving, he emphasised the importance of "greater regional integration at all levels for socio-economic
-			development of South Asian region" and put forward his agenda.
-			"We hope that the Summit will lead to concrete outcomes, particularly in regard to various initiatives on enhancing connectivity," Modi posted on Twitter</p>
-			<p>Bengaluru: President Pranab Mukherjee will inaugurate the Commonwealth Science Conference,
-			which is being held in India for the first time on Tuesday evening. Duke of York Prince Andrew will be the
-			special guest at the inaugural session of the four-day conference at the country's premiere Indian Institute of Science (IISc).</p>
-			
-			
+			<div id = "first">
+				<div class="sb-toggle-left"><img src="menu_icon.png"></div>
+				<h1>Left Slidebar Only Example</h1>
+				<p>This example only uses the left Slidebar. The usual control classes are here for testing purposes.</p>
+				<p>Prime Minister Narendra Modi arrived in Nepali capital Kathmandu on Tuesday for the 18th edition of the Saarc summit amid
+				speculation over whether he will hold talks with his Pakistani counterpart Nawaz Sharif after a chill in bilateral relations.
+				In a series of tweets before leaving, he emphasised the importance of "greater regional integration at all levels for socio-economic
+				development of South Asian region" and put forward his agenda.
+				"We hope that the Summit will lead to concrete outcomes, particularly in regard to various initiatives on enhancing connectivity," Modi posted on Twitter</p>
+				<p>Bengaluru: President Pranab Mukherjee will inaugurate the Commonwealth Science Conference,
+				which is being held in India for the first time on Tuesday evening. Duke of York Prince Andrew will be the
+				special guest at the inaugural session of the four-day conference at the country's premiere Indian Institute of Science (IISc).</p>
+			</div>
+			<div id ="second">
+				This is some demo for testing.
+			</div>
 		</div>
 		
 		<div class="sb-slidebar sb-left">
 			<!-- Your left Slidebar content. -->
 			<ul>
-				<li><a href="http://google.co.in">first tag</a></li>
-				<li><a href="http://facebook.com">2nd tag</a></li>
+				<li><a href="#first">first tag</a></li>
+				<li><a href="#second">2nd tag</a></li>
 			</ul>
 		</div>
 				
@@ -45,6 +48,21 @@
 			(function($) {
 				$(document).ready(function() {
 					$.slidebars();
+					var first = $($('.sb-slidebar li a')[0]).attr('href');
+					$('.sb-slidebar li a').each(function(num,element){
+						$($(element).attr('href')).hide();
+						$(first).show();
+						$(first).addClass('activePage');
+					});
+					$('.sb-slidebar li a').bind('click',function(event){
+						var element = $(this).attr('href');
+						if ($(element).css('display')=='none'){
+						    $(element).fadeToggle(2000);
+						    $('.activePage').hide();
+						    $('.activePage').removeClass('activePage');
+						    $(element).addClass('activePage');
+						}
+					});
 				});
 			}) (jQuery);
 		</script>
